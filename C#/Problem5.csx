@@ -1,65 +1,35 @@
 ﻿//2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
 //What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20 ?
 
-
-using System;
-using System.Linq;
-
-//https://www.codeproject.com/Articles/465041/Primality-Test
-static bool isPrime(this int n)
+//Brute-force method
+bool isDivisibleBy(int dividend, int divisor)
 {
-    if (n < 2)
-        return false;
-    if (n == 2)
-        return true;
-    if (n % 2 == 0)
-        return false;
-    for (int i = 3; i < Math.Sqrt(n); i += 2)
+    return dividend % divisor == 0;
+}
+
+int SmallestMultiple(int[] values)
+{
+    for(int i=20; true; i+=20)
     {
-        //A number "number" is divisible by another number "i"
-        //if the rest of the division of number divided i equals to zero
-        if (n % i == 0)
-            return false;
+        bool found = true;
+        foreach(int value in values)
+        {
+            if(!isDivisibleBy(i,value))
+            {
+                found = false;
+                continue;
+            }
+        }
+        if(found)
+        {
+            return i;
+        }
     }
-    //If no exist a number between 2 and sqrt(number) that divides number
-    return true;
 }
 
-int[] factors = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };//,11,12,13,14,15,16,17,18,19,20};
+int[] values = new int[]{2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+int smallestMultiple = SmallestMultiple(values);
 
+Console.WriteLine(smallestMultiple);
+//232792560
 
-//We do not want primes. We want composites, and primes that divisors of those composites
-int[] PrimesIn(int[] values)
-{
-    return (values.Where(v => isPrime(v))).ToArray();
-}
-
-static bool ContainsDivisorFor(this int[] values, int value)
-{
-    foreach(int v in values)
-    {
-        if (v % value == 0)
-            return true;
-    }
-    return false;
-}
-
-int[] CompositesAndDivisors(int[] values)
-{
-    return (values.Where(v => (!isPrime(v) || !values.ContainsDivisorFor(v)))).ToArray();
-}
-
-int CompositeProduct(int[] values)
-{
-    int[] QualifiedValues = CompositesAndDivisors(values);
-    int product = 1;
-
-    foreach(int value in QualifiedValues)
-    {
-        product *= value;
-    }
-
-    return product;
-}
-
-Console.WriteLine(CompositeProduct(factors));
