@@ -17,8 +17,6 @@ We can see that 28 is the first triangle number to have over five divisors.
 What is the value of the first triangle number to have over five hundred divisors?
 */
 
-using System;
-
 List<long> GetDivisors(long dividend)
 {
     List<long> divisors = new List<long>();
@@ -31,13 +29,35 @@ List<long> GetDivisors(long dividend)
     }
     return divisors;
 }
+long GetDivisorsCount(long dividend)
+{
+    long divisors = 0;
+
+    for(long i=1; i < Math.Sqrt(dividend); ++i)
+    {
+        if(dividend % i == 0)
+        {
+            ++divisors;
+        }
+    }
+    return divisors;
+}
 
 long GetTriangleNumber(long index) =>
     (index <= 1 ? 1 : (index + GetTriangleNumber(index-1)));
 
-long candidateIndex = 1;
-while(GetDivisors(candidateIndex).Count <= 500)
+long GetTriangleNumberWith(long factors) =>
+    GetTriangleNumberWith(factors,1);
+
+long GetTriangleNumberWith(long factors, long index) =>
+    (GetDivisorsCount(GetTriangleNumber(index)) > factors)
+        ? GetTriangleNumber(index)
+        : GetTriangleNumberWith(factors, index+1);
+
+/*do
 {
     ++candidateIndex;
-}
-Console.WriteLine(GetTriangleNumber(candidateIndex));
+    Console.WriteLine(candidateIndex + ": " + GetTriangleNumber(candidateIndex));
+}while(GetDivisorsCount(GetTriangleNumber(candidateIndex)) <= 500);*/
+
+Console.WriteLine(GetTriangleNumberWith(1));
