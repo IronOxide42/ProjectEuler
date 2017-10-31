@@ -7,6 +7,6 @@ let range = [1L..1000000L]
 let mutable maximum = 1L
 
 for i in range do
-    if (Seq.length (Collatz i)) > (Seq.length (Collatz maximum)) then maximum <- i
+    if (i |> Collatz |> Seq.length) > (maximum |> Collatz |> Seq.length) then maximum <- i
 
 printf "%i" maximum
