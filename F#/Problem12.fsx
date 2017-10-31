@@ -1,18 +1,18 @@
-let rec GetTriangleNumber (index:uint64) =
-    if (index = 1UL) then 1UL
-    else (index + (GetTriangleNumber (index-1UL)))
+let rec GetTriangleNumber (index:bigint) =
+    if (index = (bigint 1)) then (bigint 1)
+    else (index + (GetTriangleNumber (index-(bigint 1))))
 
 let GetDivisors dividend =
-    let rec getDivisorsHelper (dividend:uint64) (curDivisor:uint64) =
-        if curDivisor = 1UL then [1UL;]
-        elif (dividend % curDivisor = 0UL) then curDivisor::(getDivisorsHelper dividend (curDivisor-1UL))
-        else getDivisorsHelper dividend (curDivisor-1UL)
+    let rec getDivisorsHelper (dividend:bigint) (curDivisor:bigint) =
+        if curDivisor = (bigint 1) then [(bigint 1);]
+        elif (dividend % curDivisor = (bigint 0)) then curDivisor::(getDivisorsHelper dividend (curDivisor-(bigint 1)))
+        else getDivisorsHelper dividend (curDivisor-(bigint 1))
     getDivisorsHelper dividend dividend
 
 let rec GetTriangleNumberWithOver divisorCount =
-    let rec getTriangleNumberWithOverHelper (divisorCount:uint64) (index:uint64) =
-        if uint64(Seq.length (GetDivisors (GetTriangleNumber index))) > divisorCount then (GetTriangleNumber index)
-        else getTriangleNumberWithOverHelper divisorCount (index+1UL)
-    getTriangleNumberWithOverHelper divisorCount 1UL
+    let rec getTriangleNumberWithOverHelper (divisorCount:bigint) (index:bigint) =
+        if bigint(Seq.length (GetDivisors (GetTriangleNumber index))) > divisorCount then (GetTriangleNumber index)
+        else getTriangleNumberWithOverHelper divisorCount (index+(bigint 1))
+    getTriangleNumberWithOverHelper divisorCount (bigint 1)
 
-GetTriangleNumberWithOver 500UL;;
+GetTriangleNumberWithOver (bigint 500);;
