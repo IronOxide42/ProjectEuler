@@ -1,31 +1,22 @@
-﻿open FSharp.Core
+﻿let rec dividesAnyIn (x:int) (xlist:int list) =
+    if (Seq.isEmpty xlist) then false//(x % xlist.Head = 0)
+    elif (xlist.Head % x = 0) then true
+    else (dividesAnyIn x xlist.Tail)
 
-//http://www.fssnip.net/7D/title/Prime-numbers-Sieve-of-Eratosthenes
-let isPrime n =
-    match n with
-    | _ when n > 3 && (n % 2 = 0 || n % 3 = 0) -> false
-    | _ ->
-        let maxDiv = int(System.Math.Sqrt(float n)) + 1
-        let rec f d i = 
-            if d > maxDiv then 
-                true
-            else
-                if n % d = 0 then 
-                    false
-                else
-                    f (d + i) (6 - i)     
-        f 5 2
-//End snippet
+let rec Filter (x:int list) =
+    if (Seq.length x = 1) then x
+    elif (dividesAnyIn x.Head x.Tail) then (Filter x.Tail)
+    else x.Head::(Filter x.Tail)
 
-let Factors = [1..20]
+let rec dividesAllIn (xlist:int list) (x:int) =
+    if (Seq.isEmpty xlist) then true
+    elif (x % xlist.Head = 0) then (dividesAllIn xlist.Tail x)
+    else false
 
-let PrimesIn factors =
-    query {
-        for factor in factors do
-        where (isPrime factor)
-        select factor
-    }
+let Problem5 xlist =
+    let rec problem5Helper x factors =
+        if (dividesAllIn factors x) then x
+        else (problem5Helper (x+1) (Filter factors))
+    problem5Helper 1 xlist
 
-let Product factors = (PrimesIn factors) |> Array.reduce (*)
-
-Product Factors;;
+Problem5 [1..20];;
