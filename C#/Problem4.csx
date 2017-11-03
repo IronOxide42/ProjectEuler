@@ -3,7 +3,7 @@
 
 using System.Linq;
 
-static bool IsPalindromic(this string value)
+bool IsPalindromic(string value)
 {
     string reverse = new string(value.ToCharArray().Reverse().ToArray());
     return value == reverse;
@@ -33,10 +33,11 @@ for (int i = 0; i < 1000; ++i)
 
 foreach(int candidate in products)
 {
-    if(candidate > max && candidate.ToString().IsPalindromic())
+    if(candidate > max && IsPalindromic(candidate.ToString()))
     {
         max = candidate;
     }
 }
 
 Console.WriteLine(max);
+//906609

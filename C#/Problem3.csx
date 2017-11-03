@@ -7,7 +7,7 @@ long value = 600851475143;
 long currentCandidate = (long)Math.Floor(Math.Sqrt(value));
 
 //https://stackoverflow.com/a/15743238
-public static bool IsPrime(this long number)
+public static bool IsPrime(long number)
 {
     if (number == 1) return false;
     if (number == 2) return true;
@@ -23,11 +23,10 @@ public static bool IsPrime(this long number)
     return true;
 }
 
-public static bool Divides(this long divisor, long dividend) => dividend % divisor == 0;
-
-while(!(currentCandidate.IsPrime() && value % currentCandidate == 0))
+while(!(IsPrime(currentCandidate) && value % currentCandidate == 0))
 {
     --currentCandidate;
 }
 
 Console.WriteLine(currentCandidate);
+//6857

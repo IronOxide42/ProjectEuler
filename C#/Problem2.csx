@@ -24,3 +24,4 @@ while(currentValue < max)
 }
 
 Console.WriteLine(sum);
+//4613732

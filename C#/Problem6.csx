@@ -27,3 +27,4 @@ Console.WriteLine("Square of Sum:  " + squareOfSum);
 long diff = squareOfSum - sumOfSquares;
 
 Console.WriteLine(diff);
+//25164150

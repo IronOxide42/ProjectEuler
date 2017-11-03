@@ -17,47 +17,53 @@ We can see that 28 is the first triangle number to have over five divisors.
 What is the value of the first triangle number to have over five hundred divisors?
 */
 
+long GetTriangleNumber(long index)
+{
+    long triangle = 0;
+    for(int i = 1; i <= index; i++)
+    {
+        triangle += i;
+    }
+    return triangle;
+}
+
 List<long> GetDivisors(long dividend)
 {
-    List<long> divisors = new List<long>();
-    for(long i=1; i < Math.Sqrt(dividend); ++i)
+    List<long> list = new List<long>();
+    list.Add(1);
+    for(int i = 2; i < (dividend/2); i++)
     {
         if(dividend % i == 0)
         {
-            divisors.Add(i);
+            list.Add(i);
         }
     }
-    return divisors;
+    list.Add(dividend);
+    return list;
 }
-long GetDivisorsCount(long dividend)
-{
-    long divisors = 0;
 
-    for(long i=1; i < Math.Sqrt(dividend); ++i)
+long GetDivisorCount(long dividend)
+{
+    long count = 2; //divident and 1 always divides
+    for(int i = 2; i < (dividend/2); i++)
     {
         if(dividend % i == 0)
         {
-            ++divisors;
+            count++;
         }
     }
-    return divisors;
+    return count;
 }
 
-long GetTriangleNumber(long index) =>
-    (index <= 1 ? 1 : (index + GetTriangleNumber(index-1)));
-
-long GetTriangleNumberWith(long factors) =>
-    GetTriangleNumberWith(factors,1);
-
-long GetTriangleNumberWith(long factors, long index) =>
-    (GetDivisorsCount(GetTriangleNumber(index)) > factors)
-        ? GetTriangleNumber(index)
-        : GetTriangleNumberWith(factors, index+1);
-
-/*do
+long GetFirstTriangleNumberWithOver(long divisorCount)
 {
-    ++candidateIndex;
-    Console.WriteLine(candidateIndex + ": " + GetTriangleNumber(candidateIndex));
-}while(GetDivisorsCount(GetTriangleNumber(candidateIndex)) <= 500);*/
-
-Console.WriteLine(GetTriangleNumberWith(1));
+    long candidate = 1;
+    long triangle = GetTriangleNumber(candidate);
+    while(GetDivisorCount(triangle) < divisorCount)
+    {
+        candidate++;
+        triangle = GetTriangleNumber(candidate);
+    }
+    return triangle;
+}
+Console.WriteLine(GetFirstTriangleNumberWithOver(5));
