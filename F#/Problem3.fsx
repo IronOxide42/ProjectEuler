@@ -12,7 +12,7 @@ let rec LargestPrimeFactorHelper value sieve =
     else LargestPrimeFactorHelper value sieve.Tail
 
 let LargestPrimeFactor value =
-    LargestPrimeFactorHelper value (List.rev (sieve [2L..value]))
+    LargestPrimeFactorHelper value (List.rev (sieve [2L..(value/2L)]))
 
 let Problem3 value =
     LargestPrimeFactor value
