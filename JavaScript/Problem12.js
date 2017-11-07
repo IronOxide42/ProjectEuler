@@ -17,44 +17,28 @@ We can see that 28 is the first triangle number to have over five divisors.
 What is the value of the first triangle number to have over five hundred divisors?
 */
 
-const GetTriangleNumber = index => {
-	let triangle = 0
-	for(let i = 1; i <= index; i++) {
-		triangle += i
-	}
-	return triangle
-}
+const GetTriangleNumber = index => ( (index * (index + 1)) / 2)
 
 const GetDivisors = dividend => {
-	let list = []
-	list.push(1)
-	for(let i = 2; i < (dividend / 2); i++) {
-		if(dividend % i === 0) {
-			list.push(1)
-		}
-	}
-	list.push(dividend)
-	return list
-}
-
-const GetDivisorCount = dividend => {
-	let count = 2 //dividend and 1 always divide
-	for(let i = 2; i < dividend/2; i++) {
-		if(dividend % i === 0) {
-			count++
-		}
-	}
-	return count
+    let divisors = [] //dividend and 1 always divide
+    for(let i = 1; i <= Math.sqrt(dividend); i++) {
+        if(dividend % i === 0) {
+            divisors.push(i)
+            divisors.push(dividend/i)
+        }
+    }
+    divisors.sort((a,b) => a-b)
+    return divisors
 }
 
 const GetFirstTriangleNumberWithOver = divisorCount => {
-	let candidate = 1
-	let triangle = GetTriangleNumber(candidate)
-	while(GetDivisorCount(triangle) < divisorCount) {
-		candidate ++
-		triangle = GetTriangleNumber(candidate)
-	}
-	return triangle
+    let candidate = 1
+    let triangle = GetTriangleNumber(candidate)
+    while(GetDivisors(triangle).length < divisorCount) {
+        candidate ++
+        triangle = GetTriangleNumber(candidate)
+    }
+    return triangle
 }
 
 console.log(GetFirstTriangleNumberWithOver(500))
