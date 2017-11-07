@@ -14,7 +14,7 @@ function problem1(value) {
     {
         let qualifies = false;
         divisors.forEach(
-            function(j) { if(IsMultipleOf(i,j)) qualifies = true; }
+            divisor => { if(IsMultipleOf(i,divisor)) qualifies = true; }
         );
         if (qualifies)
         {
