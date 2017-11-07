@@ -16,4 +16,4 @@ let rec SumUpTo max =
 let rec Problem2 max = 
     SumUpTo (max-1)
 
-Problem2 1000;;
+printfn "%i" (Problem2 1000)

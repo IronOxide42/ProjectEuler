@@ -30,4 +30,4 @@ let rec SumFibonacciEvens index =
 let Problem2 max =
     SumFibonacciEvens (GetFibonacciIndex max)
 
-Problem2 4000000;;
+printfn "%i" (Problem2 4000000)
