@@ -9,34 +9,17 @@ bool IsPalindromic(string value)
     return value == reverse;
 }
 
-int max;
+int max = 0;
 
-int[] xaxis = new int[1000];
-int[] yaxis = new int[1000];
-for(int i=0; i < 1000; ++i)
+for(int i = 100; i < 1000; i++)
 {
-    xaxis[i] = i;
-    yaxis[i] = i;
-}
-
-int[,] products = new int[1000,1000];
-
-//i = xaxis
-for (int i = 0; i < 1000; ++i)
-{
-    //j = yaxis
-    for (int j = 0; j < 1000; ++j)
-    {
-        products[i,j] = xaxis[i] * yaxis[j];
-    }
-}
-
-foreach(int candidate in products)
-{
-    if(candidate > max && IsPalindromic(candidate.ToString()))
-    {
-        max = candidate;
-    }
+	for(int j = 100; j < 1000; j++)
+	{
+		if(i * j > max && IsPalindromic((i * j).ToString()))
+		{
+			max = i * j;
+		}
+	}
 }
 
 Console.WriteLine(max);

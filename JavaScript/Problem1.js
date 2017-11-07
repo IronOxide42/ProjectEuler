@@ -2,7 +2,7 @@
 //If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
 //Find the sum of all the multiples of 3 or 5 below 1000.
 
-function imperitive(value) {
+function problem1(value) {
     const IsMultipleOf = (value,divisor) => value % divisor === 0 ;
 
     let sum = 0;
@@ -25,18 +25,7 @@ function imperitive(value) {
     return sum;
 }
 
-function functional(value) {
-    let qualifies = value => (value % 3 === 0 && value % 5 === 0);
-    let sumUpTo = max =>
-        (max === 0) ? 0 :
-        (qualifies(max)) ? (max + sumUpTo(max-1)) :
-        (sumUpTo(max-1));
-    let problem2 = max => sumUpTo(max-1);
-    return problem2(value)
-}
-
 let question = 1000;
-console.log(imperitive(question));
-console.log(functional(question));
+console.log(problem1(question));
 
 //233168

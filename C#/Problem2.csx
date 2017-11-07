@@ -3,24 +3,18 @@
 //1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
 //By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
-using System;
-
-int lastValue = 1;
-int currentValue = 2;
+int fib(int index) =>
+	index == 0 ? 1 :
+	index == 1 ? 1 :
+	fib(index-1) + fib(index-2);
 
 int max = 4000000;
-Int64 sum = 0;
+int sum = 0;
 
-while(currentValue < max)
+int value = fib(0);
+for(int i = 0; value < max; value = fib(++i))
 {
-    if(currentValue % 2 == 0)
-    {
-        sum += currentValue;
-    }
-
-    int nextValue = lastValue + currentValue;
-    lastValue = currentValue;
-    currentValue = nextValue;
+	sum += value % 2 == 0 ? value : 0;
 }
 
 Console.WriteLine(sum);
