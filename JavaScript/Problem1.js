@@ -3,29 +3,26 @@
 //Find the sum of all the multiples of 3 or 5 below 1000.
 
 let problem1 = value => {
-    const IsMultipleOf = (value,divisor) => value % divisor === 0 ;
+    const IsMultipleOf = (value, divisor) => value % divisor === 0 ;
 
     let sum = 0;
 
     const max = value;
-    const divisors = [3,5];
+    const divisors = [ 3, 5 ];
 
-    for(let i = 0; i < max; i++)
-    {
+    for(let i = 0; i < max; i++) {
         let qualifies = false;
         divisors.forEach(
-            divisor => { if(IsMultipleOf(i,divisor)) qualifies = true; }
+            divisor => {
+                if(IsMultipleOf(i, divisor)) { qualifies = true; }
+            }
         );
-        if (qualifies)
-        {
-            sum += i;
-        }
-        
+        if (qualifies) { sum += i; }
     }
     return sum;
-}
+};
 
 let question = 1000;
-console.log(problem1(question));
 
+console.log(problem1(question));
 //233168
