@@ -25,9 +25,5 @@ let IsPalindromic value =
     if (Seq.toList value) = (reversed value) then true
     else false
 
-let IsPalindromic value:string =
-    if (Array.rev (Array.rev value)) = (Array.rev value) then true
-    else false
-
 let explodeIntAsCharArray (i:int) =
     [for c in i.ToString() -> c]
