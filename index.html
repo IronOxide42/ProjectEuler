@@ -8,6 +8,10 @@
         
         <script src="https://www.w3schools.com/lib/w3.js"></script>
         
+        <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
         <title>
             OxidalWave - Project Euler
         </title>
@@ -28,8 +32,12 @@
                 <summary>
                     See Code
                 </summary>
-                <pre><code w3-include-html="https://raw.githubusercontent.com/IronOxide42/ProjectEuler/master/JavaScript/Problem001.js">
-                </code></pre>
+                <pre class="prettyprint"><code class="language-js"><div id="problem1Code"></div></code></pre>
+                <script>
+                    $(function(){
+                        $("#problem1Code").load("https://raw.githubusercontent.com/IronOxide42/ProjectEuler/master/JavaScript/Problem001.js");
+                    });
+                </script>
             </details>
             <input id="questionProblem1" type="text" class="parameter" value="1000"></input>
             <button id="buttonProblem1"
@@ -52,8 +60,7 @@
                 <summary>
                     See Code
                 </summary>
-                <pre><code w3-include-html="https://raw.githubusercontent.com/IronOxide42/ProjectEuler/master/JavaScript/Problem002.js">
-                </code></pre>
+                <pre class="prettyprint"><code w3-include-html="https://raw.githubusercontent.com/IronOxide42/ProjectEuler/master/JavaScript/Problem002.js" class="language-js"></code></pre>
             </details>
             <input id="questionProblem2" type="text" class="parameter" value="4000000"></input>
             <button id="buttonProblem2"
@@ -74,8 +81,7 @@
                 <summary>
                     See Code
                 </summary>
-                <pre><code w3-include-html="https://raw.githubusercontent.com/IronOxide42/ProjectEuler/master/JavaScript/Problem003.js">
-                </code></pre>
+                <pre class="prettyprint"><code w3-include-html="https://raw.githubusercontent.com/IronOxide42/ProjectEuler/master/JavaScript/Problem003.js" class="language-js"></code></pre>
             </details>
             <input id="questionProblem3" type="text" class="parameter" value="600851475143"></input>
             <button id="buttonProblem3"
@@ -96,8 +102,7 @@
                 <summary>
                     See Code
                 </summary>
-                <pre><code w3-include-html="https://raw.githubusercontent.com/IronOxide42/ProjectEuler/master/JavaScript/Problem004.js">
-                </code></pre>
+                <pre class="prettyprint"><code w3-include-html="https://raw.githubusercontent.com/IronOxide42/ProjectEuler/master/JavaScript/Problem004.js" class="language-js"></code></pre>
             </details>
             <input id="questionProblem4" type="text" class="parameter" value="3"></input>
             <button id="buttonProblem4"
@@ -118,8 +123,7 @@
                 <summary>
                     See Code
                 </summary>
-                <pre><code w3-include-html="https://raw.githubusercontent.com/IronOxide42/ProjectEuler/master/JavaScript/Problem005.js">
-                </code></pre>
+                <pre class="prettyprint"><code w3-include-html="https://raw.githubusercontent.com/IronOxide42/ProjectEuler/master/JavaScript/Problem005.js" class="language-js"></code></pre>
             </details>
             <input id="questionProblem5.1" type="text" class="parameter" value="1"></input>
             <input id="questionProblem5.2" type="text" class="parameter" value="20"></input>
