@@ -22,4 +22,4 @@ let problem10 = maxExclusive => {
     }
 
     return value;
-}
+};
