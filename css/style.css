@@ -1,12 +1,16 @@
 h1 {
-
+    font-family: sans-serif;
 }
 
 h2 {
-
+    font-family: sans-serif;
 }
 
 p {
+    font-family: sans-serif;
+}
+
+code {
 
 }
 
@@ -16,4 +20,12 @@ p {
 
 .code {
     font-family: monospace;
+}
+
+.parameter {
+
+}
+
+.answer {
+    background-color: lightgrey;
 }

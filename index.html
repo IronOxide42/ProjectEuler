@@ -4,46 +4,98 @@
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <script type="text/javascript" src="https://rawgit.com/IronOxide42/ProjectEuler/master/JavaScript/scripts.js"></script>
+        <script src="https://www.w3schools.com/lib/w3.js"></script>
         <title>
             OxidalWave - Project Euler
         </title>
     </head>
     <body>
         <h1>Project Euler</h1>
-        <h2>Problem 1</h2>
-        <p class="desc">
-            If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+        <div>
+            <h2><a href="https://raw.githubusercontent.com/IronOxide42/ProjectEuler/master/JavaScript/Problem001.js">Problem 1</a></h2>
+            <p class="desc">
+                If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+                <br>
+                Find the sum of all the multiples of 3 or 5 below 1000.
+            </p>
+            <pre><div w3-include-html="https://raw.githubusercontent.com/IronOxide42/ProjectEuler/master/JavaScript/Problem001.js">
+            </div></pre>
+            <input id="questionProblem1" type="text" class="parameter" value="1000"></input>
+            <button id="buttonProblem1"
+                type="button"
+                onclick="document.getElementById('answerProblem1').value = problem1(document.getElementById('questionProblem1').value)"
+                >Run Script</button>
+            <input id="answerProblem1" class="answer" readonly="true" />
+        </div>
 
-            Find the sum of all the multiples of 3 or 5 below 1000.
-        </p>
-        <p class="code">
-            let problem1 = value => {
-                const IsMultipleOf = (value, divisor) => value % divisor === 0; 
-            
-                let sum = 0;
-            
-                const max = value;
-                const divisors = [ 3, 5 ];
-            
-                for(let i = 0; i < max; i++) {
-                    //If at least one item in divisors divides i
-                    if(divisors.reduce((prev, cur) => (prev || (IsMultipleOf(i, cur))), false)) {
-                        sum += i;
-                    }
-                }
-                return sum;
-            };
-            
-            let question = 1000;
-            
-            console.log(problem1(question));
-        </p>
-        
-        <input id='questionProblem1' type="text" value="1000"></input>
-        <button id="buttonProblem1"
-            type="button"
-            onclick="document.getElementById('answerProblem1').value = problem1(document.getElementById('questionProblem1').value)"
-            >Run Script</button>
-        <input id='answerProblem1' class='answer' readonly="true"></input>
+        <div>
+            <h2><a href="https://raw.githubusercontent.com/IronOxide42/ProjectEuler/master/JavaScript/Problem002.js">Problem 2</a></h2>
+            <p class="desc">
+                If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+                <br>
+                Find the sum of all the multiples of 3 or 5 below 1000.
+            </p>
+            <pre><div w3-include-html="https://raw.githubusercontent.com/IronOxide42/ProjectEuler/master/JavaScript/Problem002.js">
+            </div></pre>
+            <input id="questionProblem2" type="text" class="parameter" value="4000000"></input>
+            <button id="buttonProblem2"
+                type="button"
+                onclick="document.getElementById('answerProblem2').value = problem2(document.getElementById('questionProblem2').value)"
+                >Run Script</button>
+            <input id="answerProblem2" class="answer" readonly="true" />
+        </div>
+
+        <div>
+            <h2><a href="https://raw.githubusercontent.com/IronOxide42/ProjectEuler/master/JavaScript/Problem003.js">Problem 3</a></h2>
+            <p class="desc">
+                If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+                <br>
+                Find the sum of all the multiples of 3 or 5 below 1000.
+            </p>
+            <pre><div w3-include-html="https://raw.githubusercontent.com/IronOxide42/ProjectEuler/master/JavaScript/Problem003.js">
+            </div></pre>
+            <input id="questionProblem3" type="text" class="parameter" value="600851475143"></input>
+            <button id="buttonProblem3"
+                type="button"
+                onclick="document.getElementById('answerProblem3').value = problem3(document.getElementById('questionProblem3').value)"
+                >Run Script</button>
+            <input id="answerProblem3" class="answer" readonly="true" />
+        </div>
+
+        <div>
+            <h2><a href="https://raw.githubusercontent.com/IronOxide42/ProjectEuler/master/JavaScript/Problem004.js">Problem 4</a></h2>
+            <p class="desc">
+                If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+                <br>
+                Find the sum of all the multiples of 3 or 5 below 1000.
+            </p>
+            <pre><div w3-include-html="https://raw.githubusercontent.com/IronOxide42/ProjectEuler/master/JavaScript/Problem004.js">
+            </div></pre>
+            <input id="questionProblem4" type="text" class="parameter" value="3"></input>
+            <button id="buttonProblem4"
+                type="button"
+                onclick="document.getElementById('answerProblem4').value = problem4(document.getElementById('questionProblem4').value)"
+                >Run Script</button>
+            <input id="answerProblem4" class="answer" readonly="true" />
+        </div>
+
+        <div>
+            <h2><a href="https://raw.githubusercontent.com/IronOxide42/ProjectEuler/master/JavaScript/Problem005.js">Problem 5</a></h2>
+            <p class="desc">
+                If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+                <br>
+                Find the sum of all the multiples of 3 or 5 below 1000.
+            </p>
+            <pre><div w3-include-html="https://raw.githubusercontent.com/IronOxide42/ProjectEuler/master/JavaScript/Problem005.js">
+            </div></pre>
+            <input id="questionProblem5.1" type="text" class="parameter" value="1"></input>
+            <input id="questionProblem5.2" type="text" class="parameter" value="20"></input>
+            <button id="buttonProblem5"
+                type="button"
+                onclick="document.getElementById('answerProblem5').value = problem5(document.getElementById('questionProblem5.1').value,document.getElementById('questionProblem5.2').value)"
+                >Run Script</button>
+            <input id="answerProblem5" class="answer" readonly="true" />
+        </div>
     </body>
+    <script>w3.includeHTML();</script>
 </html>
