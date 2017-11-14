@@ -1,11 +1,49 @@
 <!DOCTYPE html>
 <html>
-    <header>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script type="text/javascript" src="https://raw.githubusercontent.com/IronOxide42/ProjectEuler/master/JavaScript/Problem001.js"></script>
         <title>
             OxidalWave - Project Euler
         </title>
-    </header>
+    </head>
     <body>
         <h1>Project Euler</h1>
+        <h2>Problem 1</h2>
+        <p class="desc">
+            If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+
+            Find the sum of all the multiples of 3 or 5 below 1000.
+        </p>
+        <p class="code">
+            let problem1 = value => {
+                const IsMultipleOf = (value, divisor) => value % divisor === 0; 
+            
+                let sum = 0;
+            
+                const max = value;
+                const divisors = [ 3, 5 ];
+            
+                for(let i = 0; i < max; i++) {
+                    //If at least one item in divisors divides i
+                    if(divisors.reduce((prev, cur) => (prev || (IsMultipleOf(i, cur))), false)) {
+                        sum += i;
+                    }
+                }
+                return sum;
+            };
+            
+            let question = 1000;
+            
+            console.log(problem1(question));
+        </p>
+        
+        <input id='questionProblem1' type="text" value="1000"></input>
+        <button id="buttonProblem1"
+            type="button"
+            onclick="document.getElementById('answerProblem1').value = problem1(document.getElementById('questionProblem1').value)"
+            >Run Script</button>
+        <input id='answerProblem1' class='answer' readonly="true"></input>
     </body>
 </html>
