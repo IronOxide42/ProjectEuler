@@ -43,6 +43,8 @@ let problem2 = maxInclusiveValue => {
             ? value
             : 0; 
     }
+
+    return sum;
 }
 
 /*
