@@ -51,8 +51,6 @@ What is the largest prime factor of the number 600851475143 ?
 */
 
 let problem3 = product => {
-    const product = 600851475143;
-
     let currentCandidate = Math.ceil(Math.sqrt(product));
 
     const IsPrime = number => {
