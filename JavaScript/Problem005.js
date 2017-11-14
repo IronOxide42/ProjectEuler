@@ -31,4 +31,4 @@ let problem5 = (min, max) => {
     let smallestMultiple = SmallestMultiple(values);
 
     return smallestMultiple;
-}
+};

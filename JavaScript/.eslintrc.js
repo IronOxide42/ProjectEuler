@@ -67,6 +67,7 @@ module.exports = {
             "warn"
         ],
         "no-console": 0,
-        "no-constant-condition": 0
+        "no-constant-condition": 0,
+        "no-unused-vars": 0
     }
 };

@@ -19,4 +19,4 @@ let problem3 = product => {
     }
 
     return currentCandidate;
-}
+};

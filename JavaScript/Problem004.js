@@ -12,4 +12,4 @@ let problem4 = digits => {
     }
 
     return max;
-}
+};

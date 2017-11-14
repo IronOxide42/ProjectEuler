@@ -13,4 +13,4 @@ let problem1 = value => {
         }
     }
     return sum;
-}
+};

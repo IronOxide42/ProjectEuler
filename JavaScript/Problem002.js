@@ -16,4 +16,4 @@ let problem2 = maxInclusiveValue => {
     }
     
     return sum;
-}
+};
