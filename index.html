@@ -7,10 +7,11 @@
         <script type="text/javascript" src="https://rawgit.com/IronOxide42/ProjectEuler/master/JavaScript/scripts.js"></script>
         
         <script src="https://www.w3schools.com/lib/w3.js"></script>
-        
-        <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel=stylesheet type="text/css" href="css/prism.css">
+        <script src="scripts/prism.js"></script>
+
+        <script src="scripts/loadProblem.js"></script>
 
         <title>
             OxidalWave - Project Euler
@@ -28,23 +29,27 @@
                 <br>
                 Find the sum of all the multiples of 3 or 5 below 1000.
             </p>
-            <details>
-                <summary>
-                    See Code
-                </summary>
-                <pre class="prettyprint"><code class="language-js"><div id="problem1Code"></div></code></pre>
-                <script>
-                    $(function(){
-                        $("#problem1Code").load("https://raw.githubusercontent.com/IronOxide42/ProjectEuler/master/JavaScript/Problem001.js");
-                    });
-                </script>
-            </details>
-            <input id="questionProblem1" type="text" class="parameter" value="1000"></input>
-            <button id="buttonProblem1"
-                type="button"
-                onclick="document.getElementById('answerProblem1').value = problem1(document.getElementById('questionProblem1').value)"
-                >Run Script</button>
-            <input id="answerProblem1" class="answer" readonly="true" />
+                <details>
+                    <summary>
+                        See Code
+                    </summary>
+                    <div class="codeblock">
+                        <pre><code id="codeProblem1"></code></pre>
+                    </div>
+                </details>
+            <script>loadProblem(1);</script>
+            <table>
+                <tr>
+                    <td><span class="parameterDesc">Maximum</span></td>
+                    <td><input id="questionProblem1" type="text" class="parameter" value="1000"></input></td>
+                </tr><tr>
+                    <td><button id="buttonProblem1"
+                        type="button"
+                        onclick="document.getElementById('answerProblem1').value = problem1(document.getElementById('questionProblem1').value)"
+                        >Calculate</button></td>
+                    <td><input id="answerProblem1" class="answer" readonly="true" value="233168"/></td>
+                </tr>
+            </table>
         </div>
 
         <div>
@@ -60,14 +65,23 @@
                 <summary>
                     See Code
                 </summary>
-                <pre class="prettyprint"><code w3-include-html="https://raw.githubusercontent.com/IronOxide42/ProjectEuler/master/JavaScript/Problem002.js" class="language-js"></code></pre>
+                <div class="codeblock">
+                    <pre><code id="codeProblem2"></code></pre>
+                </div>
             </details>
-            <input id="questionProblem2" type="text" class="parameter" value="4000000"></input>
-            <button id="buttonProblem2"
-                type="button"
-                onclick="document.getElementById('answerProblem2').value = problem2(document.getElementById('questionProblem2').value)"
-                >Run Script</button>
-            <input id="answerProblem2" class="answer" readonly="true" />
+            <script>loadProblem(2);</script>
+            <table>
+                <tr>
+                    <td><span class="parameterDesc">Maximum</span></td>
+                    <td><input id="questionProblem2" type="text" class="parameter" value="4000000"></input></td>
+                </tr><tr>
+                    <td><button id="buttonProblem2"
+                        type="button"
+                        onclick="document.getElementById('answerProblem2').value = problem2(document.getElementById('questionProblem2').value)"
+                        >Calculate</button></td>
+                    <td><input id="answerProblem2" class="answer" readonly="true" value="4613732" />
+                </tr>
+            </table>
         </div>
 
         <div>
@@ -81,14 +95,23 @@
                 <summary>
                     See Code
                 </summary>
-                <pre class="prettyprint"><code w3-include-html="https://raw.githubusercontent.com/IronOxide42/ProjectEuler/master/JavaScript/Problem003.js" class="language-js"></code></pre>
+                <div class="codeblock">
+                    <pre><code id="codeProblem3"></code></pre>
+                </div>
             </details>
-            <input id="questionProblem3" type="text" class="parameter" value="600851475143"></input>
-            <button id="buttonProblem3"
-                type="button"
-                onclick="document.getElementById('answerProblem3').value = problem3(document.getElementById('questionProblem3').value)"
-                >Run Script</button>
-            <input id="answerProblem3" class="answer" readonly="true" />
+            <script>loadProblem(3);</script>
+            <table>
+                <tr>
+                    <td><span class="parameterDesc">Value</span></td>
+                    <td><input id="questionProblem3" type="text" class="parameter" value="600851475143"></input></td>
+                </tr><tr>
+                    <td><button id="buttonProblem3"
+                        type="button"
+                        onclick="document.getElementById('answerProblem3').value = problem3(document.getElementById('questionProblem3').value)"
+                        >Calculate</button></td>
+                    <td><input id="answerProblem3" class="answer" readonly="true" value="6857" /></td>
+                </tr>
+            </table>
         </div>
 
         <div>
@@ -102,14 +125,23 @@
                 <summary>
                     See Code
                 </summary>
-                <pre class="prettyprint"><code w3-include-html="https://raw.githubusercontent.com/IronOxide42/ProjectEuler/master/JavaScript/Problem004.js" class="language-js"></code></pre>
+                <div class="codeblock">
+                    <pre><code id="codeProblem4"></code></pre>
+                </div>
             </details>
-            <input id="questionProblem4" type="text" class="parameter" value="3"></input>
-            <button id="buttonProblem4"
-                type="button"
-                onclick="document.getElementById('answerProblem4').value = problem4(document.getElementById('questionProblem4').value)"
-                >Run Script</button>
-            <input id="answerProblem4" class="answer" readonly="true" />
+            <script>loadProblem(4);</script>
+            <table>
+                <tr>
+                    <td><span class="parameterDesc">Digits</span></td>
+                    <td><input id="questionProblem4" type="text" class="parameter" value="3"></input></td>
+                </tr><tr>
+                    <td><button id="buttonProblem4"
+                            type="button"
+                            onclick="document.getElementById('answerProblem4').value = problem4(document.getElementById('questionProblem4').value)"
+                            >Calculate</button></td>
+                    <td><input id="answerProblem4" class="answer" readonly="true" value="906609"/></td>
+                </tr>   
+            </table>
         </div>
 
         <div>
@@ -123,16 +155,27 @@
                 <summary>
                     See Code
                 </summary>
-                <pre class="prettyprint"><code w3-include-html="https://raw.githubusercontent.com/IronOxide42/ProjectEuler/master/JavaScript/Problem005.js" class="language-js"></code></pre>
+                <div class="codeblock">
+                    <pre><code id="codeProblem5"></code></pre>
+                </div>
             </details>
-            <input id="questionProblem5.1" type="text" class="parameter" value="1"></input>
-            <input id="questionProblem5.2" type="text" class="parameter" value="20"></input>
-            <button id="buttonProblem5"
-                type="button"
-                onclick="document.getElementById('answerProblem5').value = problem5(document.getElementById('questionProblem5.1').value,document.getElementById('questionProblem5.2').value)"
-                >Run Script</button>
-            <input id="answerProblem5" class="answer" readonly="true" />
+            <script>loadProblem(5);</script>
+            <table>
+                <tr>
+                    <td><span class="parameterDesc">Minimum</span></td>
+                    <td><input id="questionProblem5.1" type="text" class="parameter" value="1"></input></td>
+                </tr><tr>
+                    <td><span class="parameterDesc">Maximum</span></td>
+                    <td><input id="questionProblem5.2" type="text" class="parameter" value="20"></input></td>
+                </tr><tr>
+                    <td><button id="buttonProblem5"
+                        type="button"
+                        onclick="document.getElementById('answerProblem5').value = problem5(document.getElementById('questionProblem5.1').value,document.getElementById('questionProblem5.2').value)"
+                        >Calculate</button></td>
+                    <td><input id="answerProblem5" class="answer" readonly="true" value="232792560"/></td>
+                </tr>
+            </table>
+
         </div>
     </body>
-    <script>w3.includeHTML();</script>
 </html>

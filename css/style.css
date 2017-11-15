@@ -1,8 +1,10 @@
 h1 {
+    color: #A55D35;
     font-family: sans-serif;
 }
 
 h2 {
+    color: #A55D35;
     font-family: sans-serif;
 }
 
@@ -10,22 +12,34 @@ p {
     font-family: sans-serif;
 }
 
+body {
+    overflow: hidden;
+    background: #E6E7E8;
+}
+
+.codeblock {
+    background: #FFFFFF;
+    border: solid black 1px;
+    display:inline-block;
+    
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 code {
-
-}
-
-.desc {
-
-}
-
-.code {
-    font-family: monospace;
-}
-
-.parameter {
-
+    font-family: Consolas, monospace;
 }
 
 .answer {
-    background-color: lightgrey;
+    background-color: #DDDDDD;
+}
+
+.parameterDesc {
+    font-family: Consolas, monospace;
+    padding-right: 10px;
+    width: 150px;
+}
+
+.parameter {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
