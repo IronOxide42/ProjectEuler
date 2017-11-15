@@ -11,4 +11,7 @@ let problem9 = value => {
             }
         }
     }
+
+    //return undefined if not found
+    return undefined;
 };

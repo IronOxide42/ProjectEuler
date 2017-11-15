@@ -177,7 +177,7 @@ let problem7 = index => {
     }
 };
 
-let problem8 = number => {
+let problem8 = (series, factors) => {
     let stringProduct = strNumber => {
         let product = 1;
         for(let i = 0; i < strNumber.length; ++i) {
@@ -186,11 +186,11 @@ let problem8 = number => {
         return product;
     };
 
-    let MaxAdjacentProduct = (number, adjacencyLength) => {
+    let MaxAdjacentProduct = (series, adjacencyLength) => {
         let maxProduct = 0;
 
-        for(let i = 0; i <= (number.length - adjacencyLength); ++i) {
-            let subnumber = number.substring(i, i + adjacencyLength);
+        for(let i = 0; i <= (series.length - adjacencyLength); ++i) {
+            let subnumber = series.substring(i, i + adjacencyLength);
 
             let stringProducts = stringProduct(subnumber);
             if(stringProducts > maxProduct) {
@@ -201,11 +201,7 @@ let problem8 = number => {
         return maxProduct;
     };
 
-    let length = 13;
-
-    let answer = MaxAdjacentProduct(number, length);
-
-    return answer;
+    return MaxAdjacentProduct(series, factors);
 };
 
 let problem9 = value => {
@@ -221,6 +217,9 @@ let problem9 = value => {
             }
         }
     }
+
+    //return undefined if not found
+    return undefined;
 };
 
 let problem10 = maxExclusive => {
