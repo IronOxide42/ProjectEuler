@@ -45,7 +45,7 @@ let problem2 = maxInclusiveValue => {
     }
 
     return sum;
-}
+};
 
 /*
 The prime factors of 13195 are 5, 7, 13 and 29.
@@ -73,7 +73,7 @@ let problem3 = product => {
     }
 
     return currentCandidate;
-}
+};
 
 /*
 A palindromic number reads the same both ways.The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
@@ -94,7 +94,7 @@ let problem4 = digits => {
     }
 
     return max;
-}
+};
 
 /*
 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
@@ -134,4 +134,117 @@ let problem5 = (min, max) => {
     let smallestMultiple = SmallestMultiple(values);
 
     return smallestMultiple;
-}
+};
+
+let problem6 = factor => {
+    let sumOfSquares = 0;
+    let squareOfSum = 0;
+
+    for(let i = 1; i <= 100; ++i) {
+        sumOfSquares += i * i;
+        squareOfSum += i;
+    }
+    squareOfSum *= squareOfSum;
+
+    let diff = squareOfSum - sumOfSquares;
+
+    return diff;
+};
+
+let problem7 = index => {
+    let IsPrime = number => {
+        if (number <= 1) {return false;}
+        if (number == 2) {return true;}
+        if (number % 2 == 0) {return false;}
+
+        var boundary = Math.floor(Math.sqrt(number));
+
+        for (let i = 3; i <= boundary; i += 2) {
+            if (number % i == 0) {return false;}
+        }
+
+        return true;
+    };
+
+    let curIndex = 0;
+    for(let i = 0; true; ++i) {
+        if(IsPrime(i)) {
+            ++curIndex;
+        }
+        if(curIndex == index) {
+            return i;
+        }
+    }
+};
+
+let problem8 = number => {
+    let stringProduct = strNumber => {
+        let product = 1;
+        for(let i = 0; i < strNumber.length; ++i) {
+            product *= parseInt(strNumber[i]);
+        }
+        return product;
+    };
+
+    let MaxAdjacentProduct = (number, adjacencyLength) => {
+        let maxProduct = 0;
+
+        for(let i = 0; i <= (number.length - adjacencyLength); ++i) {
+            let subnumber = number.substring(i, i + adjacencyLength);
+
+            let stringProducts = stringProduct(subnumber);
+            if(stringProducts > maxProduct) {
+                maxProduct = stringProducts;
+            }
+        }
+
+        return maxProduct;
+    };
+
+    let length = 13;
+
+    let answer = MaxAdjacentProduct(number, length);
+
+    return answer;
+};
+
+let problem9 = value => {
+    let IsPythagorean = (a, b, c) => (a * a + b * b == c * c);
+
+    for(let a = 1; a <= value; ++a) {
+        for(let b = 1; b <= value; ++b) {
+            for(let c = 1; c <= value; ++c)         {
+                //Returns only the first value found
+                if(IsPythagorean(a, b, c) && a + b + c == value) {
+                    return a * b * c;
+                }
+            }
+        }
+    }
+};
+
+let problem10 = maxExclusive => {
+    let IsPrime = number => {
+        if (number <= 1) {return false;}
+        if (number == 2) {return true;}
+        if (number % 2 == 0) {return false;}
+
+        let boundary = Math.floor(Math.sqrt(number));
+
+        for (let i = 3; i <= boundary; i += 2) {
+            if (number % i == 0) {return false;}
+        }
+
+        return true;
+    };
+
+    let value = 0;
+
+    for(let i = 0; i <= maxExclusive; ++i) {
+        if(IsPrime(i)) {
+            value += i;
+        }
+    }
+
+    return value;
+};
