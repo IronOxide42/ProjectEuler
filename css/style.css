@@ -94,12 +94,14 @@ p {
 }
 
 .problemDescText {
-
+    
 }
 
 .problemDescList {
     padding-left: 30px;
+    padding-right: 30px;
     font-family: Consolas, monospace;
+    word-wrap: break-word;
 }
 
 .parameter {
