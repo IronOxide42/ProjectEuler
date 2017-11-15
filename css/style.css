@@ -35,7 +35,7 @@ code {
 }
 
 .parameterDesc {
-    font-family: Consolas, monospace;
+    font-family: sans-serif;
     padding-right: 10px;
     width: 150px;
 }
