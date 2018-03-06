@@ -1,0 +1,11 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {},
+    "rules": {
+        "comment-format": [true, "check-space", {"ignore-words": ["?"]}]
+    },
+    "rulesDirectory": []
+}
