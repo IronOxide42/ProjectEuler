@@ -11,12 +11,12 @@ let fact = (n) => {
 };
 
 let sumOfFactorialOfDigits = (n) => {
-    const digits = (n.toString()).split("");
-    let sum = 0;
-    for (let i = 0; i < digits.length; ++i) {
-        sum += fact(parseInt(digits[i]));
+    const digits = (n.toString()).split('');
+    let curSum = 0;
+    for (const digit of digits) {
+        curSum += fact(parseInt(digit, 10));
     }
-    return sum;
+    return curSum;
 };
 
 let sum = 0;

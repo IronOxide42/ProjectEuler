@@ -1,6 +1,6 @@
-let bigint = require("big-integer");
+import bigint from 'big-integer';
 
-let fact = (n) => {
+const fact = (n) => {
     let factorial = bigint(1);
     for (let i = 1; i <= n; ++i) {
         factorial = factorial.multiply(i);
@@ -8,11 +8,11 @@ let fact = (n) => {
     return factorial;
 };
 
-let sumOfDigits = (n) => {
-    const digits = (n.toString()).split("");
+const sumOfDigits = (n) => {
+    const digits = (n.toString()).split('');
     let sum = 0;
-    for (let i = 0; i < digits.length; ++i) {
-        sum += parseInt(digits[i]);
+    for (const digit of digits) {
+        sum += parseInt(digit, 10);
     }
     return sum;
 };

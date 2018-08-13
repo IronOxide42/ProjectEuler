@@ -1,4 +1,4 @@
-let str = "0";
+let str = '0';
 let product = 1;
 
 // If the log base 10 of n is an integer, n is a power of 10

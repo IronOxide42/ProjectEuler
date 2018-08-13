@@ -1,5 +1,4 @@
-let cur = 987654321;
-let rev = 123456789;
+let min = 123456789;
 
 let isPrime = (n) => {
     if (n <= 1) {
@@ -24,21 +23,20 @@ let isPrime = (n) => {
 };
 
 let isPandigital = (n) => {
-    // Go through digits from 1 to n.length
-    for (let i = 1; i < n.length; ++i) {
-        // If i is not used exactly once, return false
-        if (n.toString().split("").reduce(((count, digit) => (digit === i) ? count + 1 : count), 0) !== 1) {
+    let strN = n.toString();
+
+    for(let i = 1; i < strN.length+1; ++i) {
+        if(!strN.includes(i.toString())) {
             return false;
         }
     }
 
-    // All digits from 1 to i have been checked
     return true;
-};
-
-while (!(isPandigital(cur) && isPrime(cur)) && cur > rev) {
-    --cur;
 }
 
-console.log(cur);
-console.log(isPandigital(cur));
+for(let i = 987654321; i > min; --i) {
+    if(isPrime(i) && isPandigital(i)) {
+        console.log(i)
+        break;
+    }
+}

@@ -8,7 +8,7 @@ Find the largest palindrome made from the product of two 3-digit numbers.
 */
 
 function problem4(numberOfDigits: number): number {
-    const IsPalindromic = (value) => (value.toString() === value.toString().split("").reverse().join(""));
+    const IsPalindromic = (value) => (value.toString() === value.toString().split('').reverse().join(''));
 
     let max = 0;
 

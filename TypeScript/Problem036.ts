@@ -1,4 +1,4 @@
-const IsPalindromic = (value, base) => (value.toString(base) === value.toString(base).split("").reverse().join(""));
+const IsPalindromic = (value, base) => (value.toString(base) === value.toString(base).split('').reverse().join(''));
 
 let sum = 0;
 

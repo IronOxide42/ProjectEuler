@@ -1,8 +1,8 @@
-let bigint = require("big-integer");
+import bigint from 'big-integer';
 
-let fibCache = [ bigint(1), bigint(1) ];
+const fibCache = [ bigint(1), bigint(1) ];
 
-let fib = (n) => {
+const fib = (n) => {
     if (fibCache[n] !== undefined) {
         return fibCache[n];
     } else {
@@ -11,10 +11,10 @@ let fib = (n) => {
     }
 };
 
-let firstTermWith = (digitCount) => {
+const firstTermWith = (digitCount) => {
     let curIndex = 0;
     let curValue = fib(0);
-    while (curValue.divide(bigint(10).pow(digitCount - 1)) < 1) {
+    while (curValue.divide(bigint(10).pow(digitCount - 1)).lesser(1)) {
         ++curIndex;
         curValue = fib(curIndex);
     }

@@ -1,11 +1,12 @@
 {
-    "defaultSeverity": "error",
+    "defaultSeverity": "warning",
     "extends": [
         "tslint:recommended"
     ],
     "jsRules": {},
     "rules": {
-        "comment-format": [true, "check-space", {"ignore-words": ["?"]}]
+        "quotemark": [true, "single", "jsx-double"],
+        "no-console": false
     },
     "rulesDirectory": []
 }

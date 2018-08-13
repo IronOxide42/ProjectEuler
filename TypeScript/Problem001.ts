@@ -8,9 +8,13 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 */
 
 function problem1(maxExclusiveValue: number): number {
-    function IsMultipleOf(value: number, divisor: number): boolean {
-        return (value % divisor === 0);
-    }
+    /**
+     * Determines if value is a multiple of divisor.
+     * 
+     * @param value The value
+     * @param divisor 
+     */
+    const IsMultipleOf = (value: number, divisor: number): boolean => (value % divisor === 0);
 
     let sum = 0;
 
@@ -25,3 +29,5 @@ function problem1(maxExclusiveValue: number): number {
     }
     return sum;
 }
+
+console.log(problem1(1000))
