@@ -1,3 +1,5 @@
+//Solved
+
 let problem1 = value => {
     const IsMultipleOf = (value, divisor) => value % divisor === 0; 
 

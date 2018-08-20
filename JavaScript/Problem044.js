@@ -1,20 +1,25 @@
 //Calculates the pentagonal at the index n
-const pentagonal = n => ((n * (3*n-1)) / 2)
+const pentagonal = (n) => ((n * (3*n-1)) / 2)
 
 //Tests if n is pentagonal
 const isPentagonal = n => {
-    for(let i = 1; i <= n; ++i) {
+    const isPentagonalHelper = (n, i) => {
         if(pentagonal(i) == n) {
-            return true;
+            return true
         }
+        if(i == n) {
+            return false
+        }
+        return isPentagonalHelper(n, i++)
     }
-    return false;
+
+    return isPentagonalHelper(n, 1)
 }
 
 let pentagonals = []
 
 //Highest index tested
-let limit = 100
+let limit = 10
 
 for(let i = 1; i <= limit; ++i) {
     //Calculate current pentagonal
